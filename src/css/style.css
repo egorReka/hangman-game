@@ -44,6 +44,14 @@
   .button-primary {
     @apply bg-slate-200 dark:bg-indigo-500 hover:bg-slate-300 dark:hover:bg-indigo-600 rounded-md font-medium px-5 py-2;
   }
+
+  .placeholders-wrapper {
+    @apply flex gap-x-7;
+  }
+
+  .letter {
+    @apply text-3xl font-medium;
+  }
 }
 
  
