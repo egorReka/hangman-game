@@ -31,3 +31,19 @@
     font-family: "Akzidenz", "Arial", sans-serif;
   }
 }
+
+@layer components {
+  #app {
+    @apply h-screen flex flex-col justify-center items-center gap-y-10 dark:text-white dark:bg-zinc-800;
+  }
+
+  .logo {
+    @apply text-2xl sm:text-4xl md:text-5xl font-bold;
+  }
+
+  .button-primary {
+    @apply bg-slate-200 dark:bg-indigo-500 hover:bg-slate-300 dark:hover:bg-indigo-600 rounded-md font-medium px-5 py-2;
+  }
+}
+
+ 
