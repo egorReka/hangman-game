@@ -53,8 +53,16 @@
     @apply text-3xl font-medium;
   }
 
+  .lifeСounter {
+    @apply mt-2;
+  }
+
+  .tries-left {
+    @apply font-medium text-red-600;
+  }
+
   .keyboard {
-    @apply max-w-2xl flex justify-center flex-wrap gap-5;
+    @apply flex justify-center flex-wrap gap-5 max-w-2xl mt-10;
   }
 
   .keyboard-button {

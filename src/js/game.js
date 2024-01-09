@@ -2,6 +2,7 @@ import { WORDS, KEYBOARD_LETTERS } from "./mock.js";
 import { getRandomIndex } from "./utils.js";
 import { createPlaceholders } from "./create-placeholders.js";
 import { createKeyboard } from "./create-keyboard.js";
+import { createLifeСounter } from "./create-life-counter.js";
 
 const gameContainer = document.querySelector('#game');
 const startGameButton = gameContainer.querySelector('#startGame');
@@ -28,6 +29,7 @@ const renderGame = () => {
 
   gameContainer.append(
     createPlaceholders(wordToGuess),
+    createLifeСounter(),
     createKeyboard(KEYBOARD_LETTERS)
   );
 
