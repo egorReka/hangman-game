@@ -52,6 +52,14 @@
   .letter {
     @apply text-3xl font-medium;
   }
+
+  .keyboard {
+    @apply max-w-2xl flex justify-center flex-wrap gap-5;
+  }
+
+  .keyboard-button {
+    @apply grid place-content-center w-10 h-10 sm:w-14 sm:h-14;
+  }
 }
 
  
