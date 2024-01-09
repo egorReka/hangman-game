@@ -12,11 +12,11 @@ const createPlaceholders = (word) => {
     newItemElement.id = `letter_${i}`;
     newItemElement.classList.add('letter');
     newListElement.append(newItemElement);
-  };
+  }
 
   fragment.append(newListElement);
 
   return fragment;
-}
+};
 
 export { createPlaceholders };

@@ -1,6 +1,7 @@
 const getRandomIndex = (min, max) => {
-  // от и до || до
-  if (!max) {
+  const isOneNumber = !max;
+
+  if (isOneNumber) {
     max = min;
     min = 0;
   }
@@ -9,6 +10,6 @@ const getRandomIndex = (min, max) => {
   max = Math.floor(max);
 
   return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
 export { getRandomIndex };

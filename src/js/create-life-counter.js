@@ -13,6 +13,6 @@ const createLifeСounter = () => {
   fragment.append(lifeСounterContainer);
 
   return fragment;
-}
+};
 
 export { createLifeСounter };

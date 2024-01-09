@@ -17,6 +17,6 @@ const createKeyboard = (letters) => {
   fragment.append(keyboardContainer);
 
   return fragment;
-}
+};
 
 export { createKeyboard };

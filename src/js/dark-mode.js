@@ -9,11 +9,10 @@ if (localStorage.getItem('mode') === 'dark') {
 const darkModeHandle = () => {
   darkModeSwitchElement.addEventListener('input', () => {
     htmlElement.classList.toggle('dark');
-    htmlElement.classList.contains('dark') ?
-      localStorage.setItem('mode', 'dark') :
-      localStorage.setItem('mode', 'light');
-  })
-}
+    htmlElement.classList.contains('dark')
+      ? localStorage.setItem('mode', 'dark')
+      : localStorage.setItem('mode', 'light');
+  });
+};
 
 export { darkModeHandle };
-
