@@ -8,8 +8,8 @@ import { createPicture, renderPictureElement } from './create-picture.js';
 const gameContainer = document.querySelector('#game');
 const startGameButton = gameContainer.querySelector('#startGame');
 const logoGame = document.querySelector('.logo');
-
 const wordToGuess = WORDS[getRandomIndex(WORDS.length)];
+let triesLeft = 10;
 
 const saveSessionStorage = () => sessionStorage.setItem('word', wordToGuess);
 const clearWindowGame = () => (gameContainer.innerHTML = '');
@@ -20,11 +20,29 @@ const keybordButtonHandler = () => {
 
   keybord.addEventListener('click', (evt) => {
     const targetKey = evt.target.closest('.keyboard-button');
+    const word = sessionStorage.getItem('word');
+
+    evt.target.disabled = true;
 
     if (targetKey) {
-      console.log(targetKey.id);
+      const targetLetter = targetKey.id.toLowerCase();
 
-      renderPicture();
+      if (!word.includes(targetLetter)) {
+        const triesCounter = document.querySelector('.tries-left');
+        triesCounter.textContent = --triesLeft;
+        renderPicture();
+
+        return;
+      }
+
+      const wordArray = Array.from(word);
+
+      wordArray.forEach((currentLetter, i) => {
+        if (currentLetter === targetLetter) {
+          document.querySelector(`#letter_${i}`).textContent =
+            targetLetter.toUpperCase();
+        }
+      });
     }
   });
 };
@@ -35,7 +53,7 @@ const renderGame = () => {
   gameContainer.append(
     createPicture(),
     createPlaceholders(wordToGuess),
-    createLifeСounter(),
+    createLifeСounter(triesLeft),
     createKeyboard(KEYBOARD_LETTERS)
   );
   keybordButtonHandler();

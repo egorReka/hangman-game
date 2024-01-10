@@ -1,4 +1,4 @@
-const createLifeСounter = () => {
+const createLifeСounter = (tries) => {
   const fragment = document.createDocumentFragment();
   const lifeСounterContainer = document.createElement('p');
   const triesElement = document.createElement('span');
@@ -6,9 +6,9 @@ const createLifeСounter = () => {
   lifeСounterContainer.textContent = 'TRIES LEFT: ';
   lifeСounterContainer.classList.add('lifeСounter');
 
-  triesElement.id = 'tries-left';
+  // triesElement.id = 'tries-left';
   triesElement.classList.add('tries-left');
-  triesElement.textContent = 10;
+  triesElement.textContent = tries;
   lifeСounterContainer.append(triesElement);
   fragment.append(lifeСounterContainer);
 
