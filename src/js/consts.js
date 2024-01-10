@@ -1,6 +1,4 @@
-const WORDS = ['code', 'frontend', 'programming'];
 const KEYBOARD_LETTERS = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ');
-
 const PICTURE_ELEMENTS = [
   'floor',
   'pillar',
@@ -13,5 +11,6 @@ const PICTURE_ELEMENTS = [
   'left-leg',
   'right-leg',
 ];
+const WORDS = ['abc', 'ab', 'c'];
 
 export { WORDS, KEYBOARD_LETTERS, PICTURE_ELEMENTS };
