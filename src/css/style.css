@@ -86,6 +86,10 @@
     background-color: tomato;
   }
 
+  .picture-wrapper.win > div {
+    background-color: greenyellow;
+  }
+
   .floor {
     width: 80%;
     height: 5%;
@@ -118,12 +122,21 @@
     transform: translatex(-50%);
   }
 
+  .picture-wrapper.win .rope {
+    display: none;
+  }
+
   .head {
     width: 15%;
     height: 15%;
     border-radius: 50%;
     bottom: 50%;
     left: 60%;
+    transform: translatex(-50%);
+  }
+
+  .picture-wrapper.win .head {
+    bottom: 40%;
     transform: translatex(-50%);
   }
 
@@ -135,12 +148,20 @@
     transform: translatex(-50%);
   }
 
+  .picture-wrapper.win .body {
+    bottom: 23%;
+  }
+
   .left-hand {
     width: 2%;
     height: 15%;
     left: 50%;
     bottom: 35%;
     transform: translatex(50%) rotate(45deg);
+  }
+
+  .picture-wrapper.win .left-hand {
+    transform: translatex(50%) rotate(-45deg);
   }
 
   .right-hand {
@@ -151,6 +172,10 @@
     transform: translatex(-50%) rotate(-45deg);
   }
 
+  .picture-wrapper.win .right-hand {
+    transform: translatex(50%) rotate(45deg);
+  }
+
   .left-leg {
     width: 4%;
     height: 20%;
@@ -159,11 +184,35 @@
     transform: translatex(-50%) rotate(25deg);
   }
 
+  .picture-wrapper.win .left-leg {
+    bottom: 7%;
+  }
+
   .right-leg {
     width: 4%;
     height: 20%;
     left: 65%;
     bottom: 20%;
     transform: translatex(-50%) rotate(-25deg);
+  }
+
+  .picture-wrapper.win .right-leg {
+    bottom: 7%;
+  }
+
+  .result-header {
+    @apply text-2xl font-bold mt-4;
+  }
+
+  .result-header.win {
+    @apply text-lime-500;
+  }
+
+  .result-header.lose {
+    @apply text-red-500;
+  }
+
+  .result-word {
+    @apply font-medium uppercase;
   }
 }
