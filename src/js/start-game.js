@@ -4,6 +4,7 @@ import { createPicture } from './picture.js';
 import { createPlaceholders } from './placeholders.js';
 import { createLifeСounter } from './life-counter.js';
 import { createKeyboard, keybordButtonHandler } from './keyboard.js';
+import { createQuitElement, quitHandler } from './quit.js';
 
 const gameContainer = document.querySelector('#game');
 const logoGame = document.querySelector('.logo');
@@ -14,6 +15,7 @@ const startGame = () => {
   const wordToGuess = WORDS[getRandomIndex(WORDS.length)];
   let triesLeft = 10;
   let winCount = 0;
+  let quit = false;
 
   sessionStorage.setItem('word', wordToGuess);
   clearWindowGame();
@@ -23,8 +25,10 @@ const startGame = () => {
     createPicture(),
     createPlaceholders(wordToGuess),
     createLifeСounter(triesLeft),
-    createKeyboard(KEYBOARD_LETTERS)
+    createKeyboard(KEYBOARD_LETTERS),
+    createQuitElement()
   );
+  quitHandler();
   keybordButtonHandler(triesLeft, winCount);
 };
 

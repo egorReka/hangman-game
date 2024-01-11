@@ -1,6 +1,6 @@
 import { stopGame } from './stop-game.js';
 
-const checkStatusGame = (triesLeft, winCount) => {
+const checkStatusGame = (triesLeft, winCount, quit) => {
   const word = sessionStorage.getItem('word');
 
   if (triesLeft <= 0) {

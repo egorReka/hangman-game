@@ -4,12 +4,12 @@ import { startGame } from './start-game';
 
 const gameContainer = document.querySelector('#game');
 
-const showResultHeader = (text) => {
+const showResultHeader = (text, status) => {
   const fragment = document.createDocumentFragment();
   const resultHeaderContainer = document.createElement('h2');
 
   resultHeaderContainer.textContent = text;
-  resultHeaderContainer.classList.add('result-header');
+  resultHeaderContainer.classList.add('result-header', status);
 
   fragment.append(resultHeaderContainer);
 
@@ -44,17 +44,25 @@ const showPlayAgainButton = () => {
   gameContainer.append(fragment);
 };
 
+const playAgainButtonHandler = () => {
+  const playAgainButton = document.querySelector('#play-again');
+
+  playAgainButton.addEventListener('click', startGame);
+};
+
 const stopGame = (status, word) => {
   document.querySelector('.placeholders-wrapper').remove();
   document.querySelector('.lifeСounter').remove();
   document.querySelector('.keyboard').remove();
+  document.querySelector('#quit').remove();
 
   if (status === 'lose') {
-    showResultHeader('You lose :(');
+    showResultHeader('You lost :(', status);
   } else if (status === 'win') {
-    showResultHeader('You win!');
-    document.querySelector('.picture-wrapper').classList.add(status);
     const renderPicture = renderPictureElement();
+
+    showResultHeader('You won!', status);
+    document.querySelector('.picture-wrapper').classList.add(status);
 
     for (let i = 0; PICTURE_ELEMENTS.length > i; i++) {
       renderPicture();
@@ -63,10 +71,7 @@ const stopGame = (status, word) => {
 
   showResultWord(word);
   showPlayAgainButton();
-
-  const playAgainButton = document.querySelector('#play-again');
-
-  playAgainButton.addEventListener('click', startGame);
+  playAgainButtonHandler();
 };
 
 export { stopGame };

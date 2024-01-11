@@ -38,6 +38,7 @@ const keybordButtonHandler = (triesLeft, winCount) => {
 
       if (!word.includes(targetLetter)) {
         const triesCounter = document.querySelector('.tries-left');
+
         triesCounter.textContent = --triesLeft;
         renderPicture();
       } else {
