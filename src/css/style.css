@@ -35,7 +35,7 @@
 
 @layer components {
   #app {
-    @apply h-screen px-4 grid grid-rows-[max-content,_auto,_auto,_20px] justify-items-center dark:text-white dark:bg-zinc-800;
+    @apply h-svh px-4 grid grid-rows-[max-content,_auto,_auto,_20px] justify-items-center dark:text-white dark:bg-zinc-800;
   }
 
   .dark-mode-toggle {
