@@ -1,4 +1,4 @@
 Hangman game
 
-SPA
-tailwind
+deploy: https://egorreka.github.io/hangman-game/
+studied: SPA, Tailwind
