@@ -79,19 +79,31 @@
   }
 
   .picture-wrapper {
-    position: relative;
-    width: 350px;
-    height: 350px;
-    background-color: transparent;
+    @apply relative w-80 sm:w-96 h-80 sm:h-96 bg-transparent;
   }
 
   .picture-wrapper > div {
-    position: absolute;
-    background-color: tomato;
+    @apply absolute bg-red-600;
   }
 
   .picture-wrapper.win > div {
-    background-color: greenyellow;
+    @apply bg-lime-500;
+  }
+
+  .result-header {
+    @apply text-2xl font-bold mt-4;
+  }
+
+  .result-header.win {
+    @apply text-lime-500;
+  }
+
+  .result-header.lose {
+    @apply text-red-500;
+  }
+
+  .result-word {
+    @apply font-medium uppercase;
   }
 
   .floor {
@@ -202,21 +214,5 @@
 
   .picture-wrapper.win .right-leg {
     bottom: 7%;
-  }
-
-  .result-header {
-    @apply text-2xl font-bold mt-4;
-  }
-
-  .result-header.win {
-    @apply text-lime-500;
-  }
-
-  .result-header.lose {
-    @apply text-red-500;
-  }
-
-  .result-word {
-    @apply font-medium uppercase;
   }
 }
