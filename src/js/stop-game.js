@@ -4,7 +4,7 @@ import { startGame } from './start-game';
 
 const gameContainer = document.querySelector('#game');
 
-const showResultHeader = (text, status) => {
+const renderResultHeader = (text, status) => {
   const fragment = document.createDocumentFragment();
   const resultHeaderContainer = document.createElement('h2');
 
@@ -16,7 +16,7 @@ const showResultHeader = (text, status) => {
   gameContainer.append(fragment);
 };
 
-const showResultWord = (word) => {
+const renderResultWord = (word) => {
   const fragment = document.createDocumentFragment();
   const resultWordContainer = document.createElement('p');
   const resultWordElement = document.createElement('span');
@@ -31,7 +31,7 @@ const showResultWord = (word) => {
   gameContainer.append(fragment);
 };
 
-const showPlayAgainButton = () => {
+const renderPlayAgainButton = () => {
   const fragment = document.createDocumentFragment();
   const playAgainButton = document.createElement('button');
 
@@ -57,11 +57,11 @@ const stopGame = (status, word) => {
   document.querySelector('#quit').remove();
 
   if (status === 'lose') {
-    showResultHeader('You lost :(', status);
+    renderResultHeader('You lost :(', status);
   } else if (status === 'win') {
     const renderPicture = renderPictureElement();
 
-    showResultHeader('You won!', status);
+    renderResultHeader('You won!', status);
     document.querySelector('.picture-wrapper').classList.add(status);
 
     for (let i = 0; PICTURE_ELEMENTS.length > i; i++) {
@@ -69,8 +69,8 @@ const stopGame = (status, word) => {
     }
   }
 
-  showResultWord(word);
-  showPlayAgainButton();
+  renderResultWord(word);
+  renderPlayAgainButton();
   playAgainButtonHandler();
 };
 
