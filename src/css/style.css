@@ -31,11 +31,15 @@
   html {
     font-family: 'Akzidenz', 'Arial', sans-serif;
   }
+
+  body {
+    @apply dark:text-white dark:bg-zinc-800;
+  }
 }
 
 @layer components {
   #app {
-    @apply h-svh px-4 grid grid-rows-[max-content,_auto,_auto,_20px] justify-items-center dark:text-white dark:bg-zinc-800;
+    @apply h-svh px-4 grid grid-rows-[max-content,_auto,_auto,_20px] justify-items-center;
   }
 
   .dark-mode-toggle {
@@ -54,12 +58,16 @@
     @apply bg-slate-200 dark:bg-indigo-500 enabled:hover:bg-slate-300 enabled:dark:hover:bg-indigo-600 rounded-md font-medium px-5 py-2 disabled:opacity-20 disabled:cursor-not-allowed;
   }
 
+  .start-game {
+    @apply mt-6;
+  }
+
   .button-secondary {
     @apply px-2 py-1 mt-4 border border-black rounded-md hover:bg-slate-100 dark:border-white dark:hover:bg-zinc-600;
   }
 
   .placeholders-wrapper {
-    @apply flex gap-x-7;
+    @apply flex gap-x-3 sm:gap-x-5;
   }
 
   .letter {
@@ -83,7 +91,7 @@
   }
 
   .picture-wrapper {
-    @apply relative w-72 sm:w-80 h-72 sm:h-80 bg-transparent;
+    @apply relative w-[200px] sm:w-[350px] h-[200px] sm:h-[350px] bg-transparent;
   }
 
   .picture-wrapper > div {
