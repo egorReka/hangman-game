@@ -35,11 +35,15 @@
 
 @layer components {
   #app {
-    @apply h-screen pt-16 flex flex-col justify-center items-center gap-y-10 dark:text-white dark:bg-zinc-800;
+    @apply h-screen px-4 grid grid-rows-[max-content,_auto,_auto,_20px] justify-items-center dark:text-white dark:bg-zinc-800;
+  }
+
+  .dark-mode-toggle {
+    @apply py-3 flex row-span-1 place-content-center self-start justify-self-end;
   }
 
   .logo {
-    @apply text-2xl sm:text-4xl md:text-5xl font-bold;
+    @apply self-end text-2xl sm:text-4xl md:text-5xl font-bold;
   }
 
   .logo-sm {
@@ -79,7 +83,7 @@
   }
 
   .picture-wrapper {
-    @apply relative w-80 sm:w-96 h-80 sm:h-96 bg-transparent;
+    @apply relative w-72 sm:w-80 h-72 sm:h-80 bg-transparent;
   }
 
   .picture-wrapper > div {
@@ -107,112 +111,70 @@
   }
 
   .floor {
-    width: 80%;
-    height: 5%;
-    bottom: 5%;
-    left: 50%;
-    transform: translatex(-50%);
+    @apply w-[80%] h-[5%] bottom-[5%] left-[50%] translate-x-[-50%];
   }
 
   .pillar {
-    width: 8%;
-    height: 80%;
-    bottom: 5%;
-    left: 20%;
-    transform: translatex(-50%);
+    @apply w-[8%] h-[80%] bottom-[5%] left-[20%] translate-x-[-50%];
   }
 
   .bracket {
-    width: 50%;
-    height: 5%;
-    bottom: 75%;
-    left: 40%;
-    transform: translatex(-50%);
+    @apply w-[50%] h-[5%] bottom-[75%] left-[40%] translate-x-[-50%];
   }
 
   .rope {
-    width: 1%;
-    height: 10%;
-    bottom: 65%;
-    left: 60%;
-    transform: translatex(-50%);
+    @apply w-[1%] h-[10%] bottom-[65%] left-[60%] translate-x-[-50%];
   }
 
   .picture-wrapper.win .rope {
-    display: none;
+    @apply hidden;
   }
 
   .head {
-    width: 15%;
-    height: 15%;
-    border-radius: 50%;
-    bottom: 50%;
-    left: 60%;
-    transform: translatex(-50%);
+    @apply rounded-full w-[15%] h-[15%] bottom-[50%] left-[60%] translate-x-[-50%];
   }
 
   .picture-wrapper.win .head {
-    bottom: 40%;
-    transform: translatex(-50%);
+    @apply bottom-[40%] translate-x-[-50%];
   }
 
   .body {
-    width: 7%;
-    height: 20%;
-    bottom: 33%;
-    left: 60%;
-    transform: translatex(-50%);
+    @apply w-[7%] h-[20%] bottom-[33%] left-[60%] translate-x-[-50%];
   }
 
   .picture-wrapper.win .body {
-    bottom: 23%;
+    @apply bottom-[23%];
   }
 
   .left-hand {
-    width: 2%;
-    height: 15%;
-    left: 50%;
-    bottom: 35%;
-    transform: translatex(50%) rotate(45deg);
+    @apply w-[2%] h-[15%] bottom-[35%] left-[50%] translate-x-[50%] rotate-[45deg];
   }
 
   .picture-wrapper.win .left-hand {
-    transform: translatex(50%) rotate(-45deg);
+    @apply translate-x-[50%] rotate-[-45deg];
   }
 
   .right-hand {
-    width: 2%;
-    height: 15%;
-    left: 68%;
-    bottom: 35%;
-    transform: translatex(-50%) rotate(-45deg);
+    @apply w-[2%] h-[15%] bottom-[35%] left-[68%] translate-x-[-50%] rotate-[-45deg];
   }
 
   .picture-wrapper.win .right-hand {
-    transform: translatex(-50%) rotate(45deg);
+    @apply translate-x-[-50%] rotate-[45deg];
   }
 
   .left-leg {
-    width: 4%;
-    height: 20%;
-    left: 55%;
-    bottom: 20%;
-    transform: translatex(-50%) rotate(25deg);
+    @apply w-[4%] h-[20%] bottom-[20%] left-[55%] translate-x-[-50%] rotate-[25deg];
   }
 
   .picture-wrapper.win .left-leg {
-    bottom: 7%;
+    @apply bottom-[7%];
   }
 
   .right-leg {
-    width: 4%;
-    height: 20%;
-    left: 65%;
-    bottom: 20%;
-    transform: translatex(-50%) rotate(-25deg);
+    @apply w-[4%] h-[20%] bottom-[20%] left-[65%] translate-x-[-50%] rotate-[-25deg];
   }
 
   .picture-wrapper.win .right-leg {
-    bottom: 7%;
+    @apply bottom-[7%];
   }
 }
