@@ -8,7 +8,8 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
-    src: url('/fonts/akzidenz/AkzidenzGroteskPro-BoldEx.otf') format('opentype');
+    src: url('/fonts/akzidenz/AkzidenzGroteskPro-BoldEx.woff2') format('woff2'),
+      url('/fonts/akzidenz/AkzidenzGroteskPro-BoldEx.woff') format('woff');
   }
 
   @font-face {
@@ -16,7 +17,8 @@
     font-weight: 500;
     font-style: normal;
     font-display: swap;
-    src: url('/fonts/akzidenz/AkzidenzGroteskPro-Md.otf') format('opentype');
+    src: url('/fonts/akzidenz/AkzidenzGroteskPro-Md.woff2') format('woff2'),
+      url('/fonts/akzidenz/AkzidenzGroteskPro-Md.woff') format('woff');
   }
 
   @font-face {
@@ -24,8 +26,8 @@
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('/fonts/akzidenz/AkzidenzGroteskPro-Regular.otf')
-      format('opentype');
+    src: url('/fonts/akzidenz/AkzidenzGroteskPro-Regular.woff2') format('woff2'),
+      url('/fonts/akzidenz/AkzidenzGroteskPro-Regular.woff') format('woff');
   }
 
   html {
